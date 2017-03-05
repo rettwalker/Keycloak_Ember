@@ -1,2 +1,9 @@
 {{outlet}}
-hello
+{{#paper-card as |card|}}
+  {{#card.title}}
+    <h1>HELLO</h1>
+  {{/card.title}}
+  {{#card.content}}
+    Welcome to an Ember and Keycloak Demo
+  {{/card.content}}
+{{/paper-card}}
