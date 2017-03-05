@@ -1,9 +1,6 @@
 {
   "name": "keylcoak-ember",
   "dependencies": {
-    "ember": "~2.8.0",
-    "ember-cli-shims": "0.1.1",
-    "keycloak": "^2.5.4",
-    "bootstrap": "^3.3.7"
+    "keycloak": "^2.5.4"
   }
 }

@@ -1,5 +1,7 @@
+$primary:'cyan';
+
 @import 'ember-paper';
 
-md-content{
-  width: 100%;
+.white-text {
+  color:white !important;
 }

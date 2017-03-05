@@ -10,6 +10,10 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
     },
 
@@ -20,14 +24,14 @@ module.exports = function(environment) {
   };
 
   ENV.contentSecurityPolicy = {
-  'default-src': "'none'",
-  'script-src': "'self' 'unsafe-inline'",
-  'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
-  'font-src': "'self' fonts.gstatic.com",
-  'connect-src': "'self'",
-  'img-src': "'self' data:",
-  'media-src': "'self'"
-};
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-inline'",
+    'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
+    'font-src': "'self' fonts.gstatic.com",
+    'connect-src': "'self'",
+    'img-src': "'self' data:",
+    'media-src': "'self'"
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

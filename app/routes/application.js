@@ -27,7 +27,7 @@ export default Ember.Route.extend({
       session.set('minValidity', 0);
 
       // finally init the service
-      session.initKeycloak();
+      //session.initKeycloak();bo
 
   }
 });

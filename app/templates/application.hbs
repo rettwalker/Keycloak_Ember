@@ -1,30 +1,28 @@
-{{#paper-sidenav-container}}
-  {{#paper-sidenav name="default" class="md-whiteframe-z2"}}
-    {{#paper-toolbar as |toolbar|}}
-      {{#paper-toolbar-tools}}Left Sidenav{{/paper-toolbar-tools}}
-      {{/paper-toolbar}}
-      {{#paper-content padding=true}}
-        Çup?
-      {{/paper-content}}
-    {{/paper-sidenav}}
-
-  {{#paper-content flex-layout="column" flex=true}}
-  {{#paper-toolbar}}
-    {{#paper-toolbar-tools}}
-      {{#paper-sidenav-toggle}}
-        {{#paper-button class="hide-gt-sm" iconButton=true }}
-          {{paper-icon "menu"}}
+{{#paper-toolbar class="white-text"}}
+  {{#paper-toolbar-tools}}
+    <h2 class="bolder">
+        <b>{{link-to 'Keycloak Ember' 'index'}}</b>
+    </h2>
+    <span class="flex"></span>
+    {{#paper-button class="white-text hide-xs"}}
+      {{paper-icon "book" class="white-text"}}
+      {{link-to 'Books' 'books'}}
+    {{/paper-button}}
+    {{#paper-menu class="white-text hide-gt-xs" isOpen=menuFourIsOpen position="target-right target" as |menu|}}
+      {{#menu.trigger class="hide-gt-xs"}}
+        {{#paper-button onClick=null iconButton=true }}
+          {{paper-icon  "more_vert" class="white-text" }}
         {{/paper-button}}
-      {{/paper-sidenav-toggle}}
-      <h2>
-        Keycloak Demo
-      </h2>
-      <span class="flex"></span>
-      {{#paper-button iconButton=true}}
-        {{paper-icon "more_vert"}}
-      {{/paper-button}}
-    {{/paper-toolbar-tools}}
-  {{/paper-toolbar}}
-    {{outlet}}
-  {{/paper-content}}
-{{/paper-sidenav-container}}
+      {{/menu.trigger}}
+      {{#menu.content as |content|}}
+        {{#content.menu-item}}
+          <span>Books</span>
+          {{paper-icon "book"}}
+        {{/content.menu-item}}
+      {{/menu.content}}
+    {{/paper-menu}}
+  {{/paper-toolbar-tools}}
+{{/paper-toolbar}}
+{{#paper-content flex-layout="column" flex=true}}
+  {{outlet}}
+{{/paper-content}}
