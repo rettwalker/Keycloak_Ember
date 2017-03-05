@@ -1,13 +1,15 @@
 {{#paper-toolbar class="white-text"}}
   {{#paper-toolbar-tools}}
-    <h2 class="bolder">
+    <h1 class="bolder">
         <b>{{link-to 'Keycloak Ember' 'index'}}</b>
-    </h2>
+    </h1>
     <span class="flex"></span>
-    {{#paper-button class="white-text hide-xs"}}
-      {{paper-icon "book" class="white-text"}}
-      {{link-to 'Books' 'books'}}
-    {{/paper-button}}
+    {{#each links as |link|}}
+      {{#paper-button onClick=(action 'goToRoute' link.location) class="white-text hide-xs"}}
+        {{paper-icon link.icon class="white-text"}}
+        <span>{{link.name}}</span>
+      {{/paper-button}}
+    {{/each}}
     {{#paper-menu class="white-text hide-gt-xs" isOpen=menuFourIsOpen position="target-right target" as |menu|}}
       {{#menu.trigger class="hide-gt-xs"}}
         {{#paper-button onClick=null iconButton=true }}
@@ -15,14 +17,16 @@
         {{/paper-button}}
       {{/menu.trigger}}
       {{#menu.content as |content|}}
-        {{#content.menu-item}}
-          <span>Books</span>
-          {{paper-icon "book"}}
-        {{/content.menu-item}}
+        {{#each links as |link|}}
+          {{#content.menu-item onClick=(action 'goToRoute' link.location)}}
+              <span>{{link.name}}</span>
+              {{paper-icon link.icon}}
+          {{/content.menu-item}}
+        {{/each}}
       {{/menu.content}}
     {{/paper-menu}}
   {{/paper-toolbar-tools}}
 {{/paper-toolbar}}
-{{#paper-content flex-layout="column" flex=true}}
+{{#paper-content flex-layout="column" flex=true class="md-content"}}
   {{outlet}}
 {{/paper-content}}

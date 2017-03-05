@@ -1,7 +1,19 @@
 $primary:'cyan';
+$lime50:#F9FBE7;
+$amber50:#FFF8E1;
+
+
 
 @import 'ember-paper';
 
 .white-text {
   color:white !important;
+}
+
+body {
+  background-color: $amber50;
+}
+
+.md-content {
+  background-color: $amber50 !important;
 }

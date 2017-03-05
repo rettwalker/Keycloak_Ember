@@ -12,12 +12,22 @@ test('it exists', function(assert) {
   assert.ok(controller);
 });
 
-test('it exists', function(assert) {
+test('goToRoute', function(assert) {
   let controller = this.subject();
   let stub = sinon.stub(controller, 'transitionToRoute');
 
-  controller.send('goToRoute');
+  controller.send('goToRoute','books');
 
   assert.ok(stub.calledOnce, 'Moved To New Route');
   assert.ok(stub.calledWith('books'), 'Moved To Books');
+});
+
+test('goToRoute ', function(assert) {
+  let controller = this.subject();
+  let stub = sinon.stub(controller, 'transitionToRoute');
+
+  controller.send('goToRoute','index');
+
+  assert.ok(stub.calledOnce, 'Moved To New Route');
+  assert.ok(stub.calledWith('index'), 'Moved To Books');
 });
