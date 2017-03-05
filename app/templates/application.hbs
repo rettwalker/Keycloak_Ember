@@ -1,30 +1,36 @@
-{{#paper-toolbar class="white-text"}}
+{{#paper-toolbar class="white-text md-navbar"}}
   {{#paper-toolbar-tools}}
-    <h1 class="bolder">
-        <b>{{link-to 'Keycloak Ember' 'index'}}</b>
-    </h1>
-    <span class="flex"></span>
-    {{#each links as |link|}}
-      {{#paper-button onClick=(action 'goToRoute' link.location) class="white-text hide-xs"}}
-        {{paper-icon link.icon class="white-text"}}
-        <span>{{link.name}}</span>
-      {{/paper-button}}
-    {{/each}}
-    {{#paper-menu class="white-text hide-gt-xs" isOpen=menuFourIsOpen position="target-right target" as |menu|}}
-      {{#menu.trigger class="hide-gt-xs"}}
-        {{#paper-button onClick=null iconButton=true }}
-          {{paper-icon  "more_vert" class="white-text" }}
+      <span class="flex"></span>
+      {{#each links as |link|}}
+        {{#paper-button onClick=(action 'goToRoute' link.location) class="white-text hide-xs"}}
+          {{paper-icon link.icon class="white-text"}}
+          <span>{{link.name}}</span>
         {{/paper-button}}
-      {{/menu.trigger}}
-      {{#menu.content as |content|}}
-        {{#each links as |link|}}
-          {{#content.menu-item onClick=(action 'goToRoute' link.location)}}
-              <span>{{link.name}}</span>
-              {{paper-icon link.icon}}
-          {{/content.menu-item}}
-        {{/each}}
-      {{/menu.content}}
-    {{/paper-menu}}
+      {{/each}}
+      {{#paper-menu class="white-text hide-gt-xs" isOpen=menuFourIsOpen position="target-right target" as |menu|}}
+        {{#menu.trigger class="hide-gt-xs"}}
+          {{#paper-button onClick=null iconButton=true }}
+            {{paper-icon  "more_vert" class="white-text" }}
+          {{/paper-button}}
+        {{/menu.trigger}}
+        {{#menu.content as |content|}}
+          {{#each links as |link|}}
+            {{#content.menu-item onClick=(action 'goToRoute' link.location)}}
+                <span>{{link.name}}</span>
+                {{paper-icon link.icon}}
+            {{/content.menu-item}}
+          {{/each}}
+        {{/menu.content}}
+      {{/paper-menu}}
+  {{/paper-toolbar-tools}}
+{{/paper-toolbar}}
+{{#paper-toolbar class="md-tabs hide-gt-xs"}}
+  {{#paper-toolbar-tools class="md-toolbar-tools"}}
+      {{#each links as |link|}}
+        {{#link-to link.location class="md-tabs-item"}}
+          <span>{{link.name}}</span>
+        {{/link-to}}
+      {{/each}}
   {{/paper-toolbar-tools}}
 {{/paper-toolbar}}
 {{#paper-content flex-layout="column" flex=true class="md-content"}}

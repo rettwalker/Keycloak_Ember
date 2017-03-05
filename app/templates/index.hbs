@@ -1,5 +1,8 @@
-{{outlet}}
-{{#paper-card as |card|}}
+<div>
+    <a href="http://www.keycloak.org/"><img class="responsive-img" src="/image/keycloak_logo.png"></a>
+    <a href="http://emberjs.com/"><img class="responsive-img" src="/image/tomster.png"></a>
+</div>
+{{#paper-card class="md-card" as |card|}}
   {{#card.title}}
     <h1>HELLO</h1>
   {{/card.title}}
@@ -7,3 +10,4 @@
     Welcome to an Ember and Keycloak Demo
   {{/card.content}}
 {{/paper-card}}
+{{outlet}}

@@ -1,6 +1,7 @@
-$primary:'cyan';
-$lime50:#F9FBE7;
-$amber50:#FFF8E1;
+$primary:'teal';
+$redA400:#FF1744;
+$blueGrey50: #ECEFF1;
+$goldish:#E3B90B;
 
 
 
@@ -11,9 +12,49 @@ $amber50:#FFF8E1;
 }
 
 body {
-  background-color: $amber50;
+  background-color: $blueGrey50;
+}
+
+.md-navbar {
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 }
 
 .md-content {
-  background-color: $amber50 !important;
+  background-color: $blueGrey50 !important;
+  margin: 5px 10%;
+}
+
+.md-card {
+  //border-bottom: $goldish solid 5px;
+}
+
+.md-tabs {
+  background-color: white !important;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+  color: black !important;
+  height:40px;
+  min-height: 40px;
+}
+
+.md-tabs > .md-toolbar-tools {
+  padding: 0;
+}
+
+.md-tabs-item {
+  height:100%;
+  width:50%;
+  text-align: center;
+
+}
+
+.md-tabs-item > span {
+  vertical-align: -webkit-baseline-middle;
+}
+
+.md-tabs-item.active {
+  border-bottom: $goldish solid 2px;
+}
+
+.responsive-img {
 }
